@@ -1,4 +1,4 @@
-#ExoPlayer Intro
+# ExoPlayer Intro
 
 An introduction to media playback using ExoPlayer
 
