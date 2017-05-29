@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     String userAgent = Util.getUserAgent(this, "ExoPlayerIntro");
     MediaSource mediaSource =
-        // Music: http://www.bensound.com
         new ExtractorMediaSource(Uri.parse("asset:///bensound-thejazzpiano.mp3"),
             new DefaultDataSourceFactory(this, userAgent), new DefaultExtractorsFactory(), null,
             null);
