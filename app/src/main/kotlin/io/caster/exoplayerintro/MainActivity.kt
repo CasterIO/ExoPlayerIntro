@@ -17,7 +17,7 @@ import com.google.android.exoplayer2.util.Util
 
 class MainActivity : AppCompatActivity() {
   private lateinit var exoPlayer: SimpleExoPlayer
-  lateinit var simpleExoPlayerView: com.google.android.exoplayer2.ui.SimpleExoPlayerView
+  lateinit var simpleExoPlayerView: SimpleExoPlayerView
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
