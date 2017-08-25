@@ -1,6 +1,7 @@
 package io.caster.exoplayerintro
 
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.google.android.exoplayer2.DefaultRenderersFactory
@@ -18,7 +19,9 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+  }
 
+  fun initializeExoplayer() {
     val renderersFactory = DefaultRenderersFactory(this,
         null, // drmSessionManager: DrmSessionManager
         DefaultRenderersFactory.EXTENSION_RENDERER_MODE_OFF)
@@ -38,9 +41,38 @@ class MainActivity : AppCompatActivity() {
     exoPlayer.playWhenReady = true
   }
 
-  override fun onDestroy() {
-    super.onDestroy()
-
+  fun releaseExoplayer() {
     exoPlayer.release()
   }
+
+  override fun onStart() {
+    super.onStart()
+    // Account for multi-window introduced in Nougat
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+      initializeExoplayer()
+    }
+  }
+
+  override fun onResume() {
+    super.onResume()
+    // Account for multi-window introduced in Nougat
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+      initializeExoplayer()
+    }
+  }
+
+  override fun onPause() {
+    super.onPause()
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+      releaseExoplayer()
+    }
+  }
+
+  override fun onStop() {
+    super.onStop()
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+      releaseExoplayer()
+    }
+  }
+
 }
