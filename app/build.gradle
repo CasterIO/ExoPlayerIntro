@@ -31,7 +31,7 @@ dependencies {
   compile 'com.android.support:appcompat-v7:25.4.0'
   compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-  compile 'com.google.android.exoplayer:exoplayer-core:r2.4.3'
+  compile 'com.google.android.exoplayer:exoplayer-core:r2.5.1'
 
   testCompile 'junit:junit:4.12'
   compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
