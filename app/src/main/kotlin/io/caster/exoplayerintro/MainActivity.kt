@@ -5,8 +5,8 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.google.android.exoplayer2.DefaultRenderersFactory
-import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.ExoPlayerFactory
+import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
@@ -14,7 +14,7 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
 class MainActivity : AppCompatActivity() {
-  private lateinit var exoPlayer: ExoPlayer
+  private lateinit var exoPlayer: SimpleExoPlayer
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -41,9 +41,7 @@ class MainActivity : AppCompatActivity() {
     exoPlayer.playWhenReady = true
   }
 
-  fun releaseExoplayer() {
-    exoPlayer.release()
-  }
+  fun releaseExoplayer() = exoPlayer.release()
 
   override fun onStart() {
     super.onStart()
