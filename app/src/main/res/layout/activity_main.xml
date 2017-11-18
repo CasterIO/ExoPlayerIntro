@@ -5,15 +5,57 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:padding="16dp"
   tools:context="io.caster.exoplayerintro.MainActivity">
 
   <TextView
+    android:id="@+id/titleTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello ExoPlayer!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Title: Superman"/>
+
+  <TextView
+    android:id="@+id/timeTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/titleTextView"
+    tools:text="Time: 00:29/3:28"/>
+
+  <android.support.v7.widget.AppCompatSeekBar
+    android:id="@+id/seekbar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/timeTextView"/>
+
+  <Button
+    android:id="@+id/prevButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Previous"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/seekbar"/>
+
+  <Button
+    android:id="@+id/togglePlaybackButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Play"
+    app:layout_constraintEnd_toStartOf="@+id/nextButton"
+    app:layout_constraintStart_toEndOf="@id/prevButton"
+    app:layout_constraintTop_toBottomOf="@id/seekbar"/>
+
+  <Button
+    android:id="@+id/nextButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Next"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/togglePlaybackButton"
+    app:layout_constraintTop_toBottomOf="@id/seekbar"/>
 
 </android.support.constraint.ConstraintLayout>
