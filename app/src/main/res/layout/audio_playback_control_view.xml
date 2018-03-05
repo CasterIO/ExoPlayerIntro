@@ -7,14 +7,14 @@
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center"
-      android:background="#CC000000"
+      android:background="@color/colorPrimaryDark"
       style="@style/ExoMediaButton.Play"/>
 
   <ImageButton android:id="@id/exo_pause"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center"
-      android:background="#CC000000"
+      android:background="@color/colorPrimaryDark"
       style="@style/ExoMediaButton.Pause"/>
 
 </FrameLayout>
