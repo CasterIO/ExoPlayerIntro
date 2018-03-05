@@ -10,12 +10,11 @@
       android:background="#CC000000"
       style="@style/ExoMediaButton.Play"/>
 
-  <TextView android:id="@id/exo_pause"
+  <ImageButton android:id="@id/exo_pause"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center"
       android:background="#CC000000"
-      android:text="PAUSE"
-      android:textColor="#FFFFFF"/>
+      style="@style/ExoMediaButton.Pause"/>
 
 </FrameLayout>
